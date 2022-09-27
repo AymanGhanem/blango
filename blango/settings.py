@@ -51,6 +51,7 @@ class Dev(Configuration):
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
+        'rest_framework',
     ]
 
     MIDDLEWARE = [
@@ -116,7 +117,7 @@ class Dev(Configuration):
 
     LANGUAGE_CODE = 'en-us'
 
-    TIME_ZONE = values.Value("UTC")
+    TIME_ZONE = "UTC" # values.Value("UTC")
 
     USE_I18N = True
 
