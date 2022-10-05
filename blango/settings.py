@@ -57,6 +57,7 @@ class Dev(Configuration):
         'crispy_bootstrap5',
         'rest_framework',
         'debug_toolbar',
+        'drf_yasg',
     ]
 
     MIDDLEWARE = [
@@ -202,6 +203,13 @@ class Dev(Configuration):
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.IsAuthenticatedOrReadOnly"
         ],
+    }
+
+    SWAGGER_SETTINGS = {
+      "SECURITY_DEFINITIONS": {
+          "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+          "Basic": {"type": "basic"},
+      }
     }
     
 class Prod(Dev):
